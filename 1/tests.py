@@ -1,4 +1,4 @@
-from dayone import calculate_required_fuel, calculate_total_fuel
+from main import calculate_required_fuel, calculate_total_fuel
 import unittest
 
 
