@@ -1,15 +1,7 @@
 ## Advent of Code 2019 - Python
 
-###Solutions
+### Solutions
 
-[day one](1/README.md)
-
-```
-python 1/dayone.py <file-containing-inputs>
-```
-
-#### Test Suite
-
-```
-pytest 1/tests.py
-```
+1. [day one](1/README.md)
+2. [day two](2/README.md)
+3. [day three](3/README.md)

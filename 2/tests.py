@@ -1,4 +1,4 @@
-from daytwo import process_opcodes, load_instructions
+from main import process_opcodes, load_instructions
 from collections import namedtuple
 from pathlib import Path
 import unittest

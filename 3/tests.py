@@ -1,6 +1,6 @@
 import unittest
 
-from daythree import (
+from main import (
     Point,
     generate_points,
     get_intersections,
