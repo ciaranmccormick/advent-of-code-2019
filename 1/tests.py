@@ -1,14 +1,20 @@
 from dayone import calculate_required_fuel, calculate_total_fuel
-import pytest
+import unittest
 
 
-@pytest.mark.parametrize(
-    "test_input,expected", [(12, 2), (14, 2), (1969, 654), (100756, 33583)]
-)
-def test_calculate_fuel(test_input, expected):
-    assert expected == calculate_required_fuel(test_input)
+class DayOneTest(unittest.TestCase):
+    def test_calculate_fuel(self):
+        inputs = [(12, 2), (14, 2), (1969, 654), (100756, 33583)]
+        for data in inputs:
+            with self.subTest(data=data):
+                self.assertEqual(data[1], calculate_required_fuel(data[0]))
+
+    def test_calculate_fuel_fuel(self):
+        inputs = [(14, 2), (1969, 966), (100756, 50346)]
+        for data in inputs:
+            with self.subTest(data=data):
+                self.assertEqual(data[1], calculate_total_fuel(data[0]))
 
 
-@pytest.mark.parametrize("test_input,expected", [(14, 2), (1969, 966), (100756, 50346)])
-def test_calculate_fuel_fuel(test_input, expected):
-    assert expected == calculate_total_fuel(test_input)
+if __name__ == "__main__":
+    unittest.main()
