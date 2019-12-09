@@ -2,6 +2,7 @@
 
 from argparse import ArgumentParser, Namespace
 from typing import List, Tuple
+from computer import Computer
 
 STOP = 99
 ADD = 1
@@ -42,14 +43,14 @@ def process_opcodes(opcodes: List[int]) -> List[int]:
     return inputs
 
 
-def part_two(opcodes: List[int]) -> Tuple[int, int]:
+def part_two(intcodes: List[int]) -> Tuple[int, int]:
     """Get solution to Part Two"""
-    for noun in range(100):
-        for verb in range(100):
-            codes = list(opcodes)  # make a new list
-            codes[1] = noun
-            codes[2] = verb
-            processed = process_opcodes(codes)
+    for noun in range(1, 100):
+        for verb in range(1, 100):
+            intcodes[1] = noun
+            intcodes[2] = verb
+            comp = Computer(intcodes)
+            processed = comp.run()
             if processed[0] == 19690720:
                 return noun, verb
 
@@ -60,7 +61,8 @@ def part_one(opcodes: List[int]) -> int:
     """
     opcodes[1] = 12
     opcodes[2] = 2
-    codes = process_opcodes(opcodes)
+    comp = Computer(opcodes)
+    codes = comp.run()
     return codes[0]
 
 
@@ -78,6 +80,7 @@ def parse_args() -> Namespace:
 def main():
     args = parse_args()
     opcodes = load_instructions(args.filename)
+
     zero_value = part_one(opcodes)
     print(f"Part One: answer={zero_value}")
 
