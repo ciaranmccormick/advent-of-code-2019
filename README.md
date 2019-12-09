@@ -8,3 +8,4 @@
 4. [day four](4/README.md)
 5. [day five](5/README.md)
 6. [day six](6/README.md)
+7. [day seven](7/README.md)
