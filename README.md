@@ -6,3 +6,5 @@
 2. [day two](2/README.md)
 3. [day three](3/README.md)
 4. [day four](4/README.md)
+5. [day five](5/README.md)
+6. [day six](6/README.md)
